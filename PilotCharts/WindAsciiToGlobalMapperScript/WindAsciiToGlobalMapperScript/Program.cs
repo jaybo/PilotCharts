@@ -11,25 +11,28 @@ namespace WindAsciiToGlobalMapperScript
 {
     class Program
     {
-        private static string UFile = @"\DeepZoom\JanuaryU.txt";
-        private static string VFile = @"\DeepZoom\JanuaryV.txt";
-        private static string outFile = @"\DeepZoom\Out.gms";
+        private static string backPath = @"..\..\..\..\";
+        private static string UFile = @"JanuaryU.txt";
+        private static string VFile = @"JanuaryV.txt";
+        private static string outFile = @"Out.txt";
         private static string noData = "-9999";
 
         private static void WritePoint(StreamWriter sw, string lat, string lon, double a)
         {
-            string s = string.Format(@"Symbol=WindArrow@Angle=%d", (int) a);
+            string s = string.Format("POINT_SYMBOL=Arrow@ANGLE={0}", (int)a);
             sw.WriteLine(s);
-            s = string.Format(@"%s, %s", lat, lon);
+            s = string.Format("{0}, {1}", lat, (double.Parse(lon)));
             sw.WriteLine(s);
         }
 
         static void Main(string[] args)
         {
-            var U = File.ReadAllLines(UFile);
-            var V = File.ReadAllLines(VFile);
-            var output = new StreamWriter(outFile,false);
-            output.WriteLine("GLOBAL_MAPPER_SCRIPT VERSION=1.00");
+            var dir = Directory.GetCurrentDirectory();
+
+            var U = File.ReadAllLines(Path.Combine(dir, backPath, UFile));
+
+            var V = File.ReadAllLines(Path.Combine(dir, backPath, VFile));
+            var output = new StreamWriter(Path.Combine(dir, backPath, outFile), false);
                 
             var lons = U[1].Split(',');
             var du = U.Where(d => d.Contains("latitude")).ToList();
@@ -57,7 +60,7 @@ namespace WindAsciiToGlobalMapperScript
                     var lon = lons[x];
                     var u = eU[x];
                     var v = eV[x];
-                    var a = Math.Atan2(double.Parse(v), double.Parse(u))*Math.PI/2;
+                    var a = 180 + Math.Atan2(double.Parse(u), double.Parse(v))*180.0/Math.PI;
                     WritePoint(output, lat, lon, a);
                 }
             }
