@@ -95,7 +95,7 @@ namespace WindAsciiToGlobalMapperScript
                     var match = r.Match(lineU).Value;
                     var slat = rNum.Match(match).Value;
                     var lat = double.Parse(slat);
-                    int dlat = (int)lat;
+                    int dlat = (int)Math.Floor(lat);
                     Debug.WriteLine(slat);
 
                     var lonsCount = lons.Count();
@@ -109,12 +109,13 @@ namespace WindAsciiToGlobalMapperScript
                         var u = eU[x];
                         var v = eV[x];
                         var a = 180 + Math.Atan2(double.Parse(u), double.Parse(v))*180.0/Math.PI;
-                        var scale = double.Parse(eWind[x])/12;
+                        var scale = Math.Max( double.Parse(eWind[x])/7, 0.8);
 
-                        if (lat == 0.375)
+                        if (lat == -0.375)
                         {
                             int j = 1;
                         }
+                        bool southern = dlat < 0;
 
                         var bLon0P25 = slon.EndsWith(".375");
                         var bLon0P5 = slon.EndsWith(".875") || bLon0P25;
@@ -124,14 +125,20 @@ namespace WindAsciiToGlobalMapperScript
                         var bLon8P0 = (dlon % 8 == 0) && bLon0P25;
                         var bLon16P0 = (dlon % 16 == 0) && bLon0P25;
 
+                        
                         // to keep even spacing of samples, below the equator, use different values
-                        var bLat0P25 = slat.EndsWith((dlon > 0) ? ".375" : ".625" );
-                        var bLat0P5 = slon.EndsWith((dlon > 0) ? ".625" : ".375" ) || bLat0P25;
-                        var bLat1P0 = (dlat % 2 == 0) && bLat0P25;
-                        var bLat2P0 = (dlat % 2 == 0) && bLat0P25;
-                        var bLat4P0 = (dlat % 2 == 0) && bLat0P25;
-                        var bLat8P0 = (dlat % 2 == 0) && bLat0P25;
-                        var bLat16P0 = (dlat % 2 == 0) && bLat0P25;
+                        var bLat0P25 = slat.EndsWith(southern ? ".875" : ".375");
+                        var bLat0P5 = slat.EndsWith(southern ? ".375" : ".875") || bLat0P25;
+                        var bLat1P0 = bLat0P25;
+                        var bLat2P0 = (dlat % 2 == (southern ? -1 : 0)) && bLat0P25 && ((lat < -1) || (lat > 0));
+                        var bLat4P0 = (dlat % 4 == (southern ? -1 : 0)) && bLat0P25 && ((lat < -1) || (lat > 0));
+                        var bLat8P0 = (dlat % 8 == (southern ? -1 : 0)) && bLat0P25 && ((lat < -1) || (lat > 0));
+                        var bLat16P0 = (dlat % 16 == (southern ? -1 : 0)) && bLat0P25 && ((lat < -1) || (lat > 0));
+
+                        //var bLat2P0 = (dlat % 2 == 0) && bLat0P25 && ((dlat < -1) || (dlat > 0));
+                        //var bLat4P0 = (dlat % 4 == 0) && bLat0P25 && ((dlat < -1) || (dlat > 0));
+                        //var bLat8P0 = (dlat % 8 ==0) && bLat0P25 && ((dlat < -1) || (dlat > 0));
+                        //var bLat16P0 = (dlat % 16 == 0) && bLat0P25 && ((dlat < -1) || (dlat > 0));
 
                         // Debug.WriteLine(lon.ToString() + " " + b1.ToString() + b2.ToString() + b3.ToString());
                         WritePoint(o0P25, slat, slon, a, scale);
