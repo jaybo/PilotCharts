@@ -1,0 +1,234 @@
+GLOBAL_MAPPER_SCRIPT VERSION="1.00" FILENAME="E:\DeepZoom\PilotCharts\November.gmw"
+UNLOAD_ALL
+DEFINE_PROJ PROJ_NAME="GEO_WGS84"
+Projection     GEOGRAPHIC
+Datum          WGS84
+Zunits         NO
+Units          DD
+Xshift         0.000000
+Yshift         0.000000
+Parameters
+180 0 0.000 /* longitude of center of projection
+
+END_DEFINE_PROJ
+IMPORT FILENAME="E:\DeepZoom\PilotCharts\wind_spd_monthly_maps.nc" TYPE="NETCDF" PROJ_NAME="GEO_WGS84" \
+	 LABEL_FIELD="" LOAD_FLAGS="NOVEMBER" SAMPLING_METHOD="BILINEAR" ELEV_UNITS="METERS" \
+	 ELEV_SCALE="1.943844" MIN_ELEV="0.000000" MAX_ELEV="43.000000"
+IMPORT_ASCII FILENAME="E:\Deepzoom\PilotCharts\out.November.0.25.txt" PROJ_NAME="GEO_WGS84" \
+	 TYPE="POINT_ONLY" COORD_DELIM="COMMA" COORD_ORDER="Y_FIRST" INC_COORD_LINE_ATTRS="NO" \
+	 COL_HEADERS="NO" INC_ELEV_COORDS="NO" NO_DATA_DIST_MULT="0.00" GRID_FILL_TO_BOUNDS="NO" \
+	 GRID_IGNORE_ZERO="NO" SKIP_COLUMNS="0" SKIP_ROWS="0" COORD_OFFSET="0.000000,0.000000,0.000000" \
+	 COORD_SCALE="1.000000,1.000000,1.000000" LABEL_FIELD="" HIDDEN="YES" SAMPLING_METHOD="NEAREST_NEIGHBOR" \
+	 AUTO_CONTRAST="NO" CONTRAST_SHARED="YES" CONTRAST_MODE="NONE" CLIP_COLLAR="NONE" \
+	 TEXTURE_MAP="NO"
+IMPORT_ASCII FILENAME="E:\Deepzoom\PilotCharts\out.November.0.5.txt" PROJ_NAME="GEO_WGS84" \
+	 TYPE="POINT_ONLY" COORD_DELIM="COMMA" COORD_ORDER="Y_FIRST" INC_COORD_LINE_ATTRS="NO" \
+	 COL_HEADERS="NO" INC_ELEV_COORDS="NO" NO_DATA_DIST_MULT="0.00" GRID_FILL_TO_BOUNDS="NO" \
+	 GRID_IGNORE_ZERO="NO" SKIP_COLUMNS="0" SKIP_ROWS="0" COORD_OFFSET="0.000000,0.000000,0.000000" \
+	 COORD_SCALE="1.000000,1.000000,1.000000" LABEL_FIELD="" HIDDEN="YES" SAMPLING_METHOD="NEAREST_NEIGHBOR" \
+	 AUTO_CONTRAST="NO" CONTRAST_SHARED="YES" CONTRAST_MODE="NONE" CLIP_COLLAR="NONE" \
+	 TEXTURE_MAP="NO"
+IMPORT_ASCII FILENAME="E:\Deepzoom\PilotCharts\out.November.1.0.txt" PROJ_NAME="GEO_WGS84" \
+	 TYPE="POINT_ONLY" COORD_DELIM="COMMA" COORD_ORDER="Y_FIRST" INC_COORD_LINE_ATTRS="NO" \
+	 COL_HEADERS="NO" INC_ELEV_COORDS="NO" NO_DATA_DIST_MULT="0.00" GRID_FILL_TO_BOUNDS="NO" \
+	 GRID_IGNORE_ZERO="NO" SKIP_COLUMNS="0" SKIP_ROWS="0" COORD_OFFSET="0.000000,0.000000,0.000000" \
+	 COORD_SCALE="1.000000,1.000000,1.000000" LABEL_FIELD="" HIDDEN="YES" SAMPLING_METHOD="NEAREST_NEIGHBOR" \
+	 AUTO_CONTRAST="NO" CONTRAST_SHARED="YES" CONTRAST_MODE="NONE" CLIP_COLLAR="NONE" \
+	 TEXTURE_MAP="NO"
+IMPORT_ASCII FILENAME="E:\Deepzoom\PilotCharts\out.November.2.0.txt" PROJ_NAME="GEO_WGS84" \
+	 TYPE="POINT_ONLY" COORD_DELIM="COMMA" COORD_ORDER="Y_FIRST" INC_COORD_LINE_ATTRS="NO" \
+	 COL_HEADERS="NO" INC_ELEV_COORDS="NO" NO_DATA_DIST_MULT="0.00" GRID_FILL_TO_BOUNDS="NO" \
+	 GRID_IGNORE_ZERO="NO" SKIP_COLUMNS="0" SKIP_ROWS="0" COORD_OFFSET="0.000000,0.000000,0.000000" \
+	 COORD_SCALE="1.000000,1.000000,1.000000" LABEL_FIELD="" HIDDEN="YES" SAMPLING_METHOD="NEAREST_NEIGHBOR" \
+	 AUTO_CONTRAST="NO" CONTRAST_SHARED="YES" CONTRAST_MODE="NONE" CLIP_COLLAR="NONE" \
+	 TEXTURE_MAP="NO"
+IMPORT_ASCII FILENAME="E:\Deepzoom\PilotCharts\out.November.4.0.txt" PROJ_NAME="GEO_WGS84" \
+	 TYPE="POINT_ONLY" COORD_DELIM="COMMA" COORD_ORDER="Y_FIRST" INC_COORD_LINE_ATTRS="NO" \
+	 COL_HEADERS="NO" INC_ELEV_COORDS="NO" NO_DATA_DIST_MULT="0.00" GRID_FILL_TO_BOUNDS="NO" \
+	 GRID_IGNORE_ZERO="NO" SKIP_COLUMNS="0" SKIP_ROWS="0" COORD_OFFSET="0.000000,0.000000,0.000000" \
+	 COORD_SCALE="1.000000,1.000000,1.000000" LABEL_FIELD="" HIDDEN="YES" SAMPLING_METHOD="NEAREST_NEIGHBOR" \
+	 AUTO_CONTRAST="NO" CONTRAST_SHARED="YES" CONTRAST_MODE="NONE" CLIP_COLLAR="NONE" \
+	 TEXTURE_MAP="NO"
+IMPORT_ASCII FILENAME="E:\Deepzoom\PilotCharts\out.November.8.0.txt" PROJ_NAME="GEO_WGS84" \
+	 TYPE="POINT_ONLY" COORD_DELIM="COMMA" COORD_ORDER="Y_FIRST" INC_COORD_LINE_ATTRS="NO" \
+	 COL_HEADERS="NO" INC_ELEV_COORDS="NO" NO_DATA_DIST_MULT="0.00" GRID_FILL_TO_BOUNDS="NO" \
+	 GRID_IGNORE_ZERO="NO" SKIP_COLUMNS="0" SKIP_ROWS="0" COORD_OFFSET="0.000000,0.000000,0.000000" \
+	 COORD_SCALE="1.000000,1.000000,1.000000" LABEL_FIELD="" HIDDEN="YES" SAMPLING_METHOD="NEAREST_NEIGHBOR" \
+	 AUTO_CONTRAST="NO" CONTRAST_SHARED="YES" CONTRAST_MODE="NONE" CLIP_COLLAR="NONE" \
+	 TEXTURE_MAP="NO"
+IMPORT_ASCII FILENAME="E:\Deepzoom\PilotCharts\out.November.16.0.txt" PROJ_NAME="GEO_WGS84" \
+	 TYPE="POINT_ONLY" COORD_DELIM="COMMA" COORD_ORDER="Y_FIRST" INC_COORD_LINE_ATTRS="NO" \
+	 COL_HEADERS="NO" INC_ELEV_COORDS="NO" NO_DATA_DIST_MULT="0.00" GRID_FILL_TO_BOUNDS="NO" \
+	 GRID_IGNORE_ZERO="NO" SKIP_COLUMNS="0" SKIP_ROWS="0" COORD_OFFSET="0.000000,0.000000,0.000000" \
+	 COORD_SCALE="1.000000,1.000000,1.000000" LABEL_FIELD="" HIDDEN="YES" SAMPLING_METHOD="NEAREST_NEIGHBOR" \
+	 AUTO_CONTRAST="NO" CONTRAST_SHARED="YES" CONTRAST_MODE="NONE" CLIP_COLLAR="NONE" \
+	 TEXTURE_MAP="NO"
+LOAD_PROJECTION PROJ_NAME="GEO_WGS84"
+SET_VIEW GLOBAL_BOUNDS="-42.0021126761,-92.9865944257,369.8049295775,93.4865944257"
+SET_VERT_DISP_OPTS SHADER_NAME="PilotCharts" AMBIENT_LIGHT_LEVEL="0.0000000000" VERT_EXAG="50.000000" \
+	 LIGHT_ALTITUDE="45.000000" LIGHT_AZIMUTH="45.000000" ENABLE_HILL_SHADING="NO" SHADE_DARKNESS="121" \
+	 SHADE_HIGHLIGHT="0" ENABLE_WATER="YES" WATER_ALPHA="128" WATER_COLOR="RGB(0,0,255)" \
+	 WATER_LEVEL="0.0000000000"
+
+/************ DEFINE MAP LAYOUT *************/
+MAP_LAYOUT
+ElevLegendBgColor=16777215
+ElevLegendTranslucency=384
+ElevLegendFont=~0~534799372~0.000~0~0
+ElevLegendVisible=1
+ElevLegendDisplayType=1
+ElevLegendDisplayUnits=1
+ElevLegendDisplayUnitsStr=
+
+DEFINE_PROJ_ELEV_LEGEND
+Projection     Fixed Screen Position
+Datum          D_ADINDAN
+Zunits         NO
+Units          RADIAN
+Xshift         0.000000
+Yshift         0.000000
+Parameters
+0.000000000 /* horz offset
+
+0.000000000 /* horz offset type (0 - left, 1 - right, 2 - center)
+
+0.000000000 /* horz offset value type (0 - inches, 1 - % width, 2 - deg lon)
+
+0.000000000 /* vert offset
+
+0.000000000 /* vert offset type (0 - top, 1 - bottom, 2 - center)
+
+0.000000000 /* vert offset value type (0 - inches, 1 - % width, 2 - deg lat)
+
+100.000000000 /* size value
+
+2.000000000 /* size value type (0 - % width, 1 - % height, 2 - pixel)
+
+1.000000000 /* always on top
+
+0.000000000 /* shrink to fit
+
+END_DEFINE_PROJ
+
+MapLegendType=0
+MapLegendBgColor=16776959
+MapLegendTranslucency=512
+MapLegendFont=~0~534799368~0.000~0~0
+MapLegendFooterFont=~0~534799372~0.000~0~0
+MapLegendHeaderFont=~0~534799372~0.000~0~0
+MapLegendHeader=
+MapLegendFooter=
+MapLegendNumColumns=1
+MapLegendLabelAttr=<Feature Description>
+
+DEFINE_PROJ_MAP_LEGEND
+Projection     Fixed Screen Position
+Datum          D_ADINDAN
+Zunits         NO
+Units          RADIAN
+Xshift         0.000000
+Yshift         0.000000
+Parameters
+0.000000000 /* horz offset
+
+1.000000000 /* horz offset type (0 - left, 1 - right, 2 - center)
+
+0.000000000 /* horz offset value type (0 - inches, 1 - % width, 2 - deg lon)
+
+0.000000000 /* vert offset
+
+1.000000000 /* vert offset type (0 - top, 1 - bottom, 2 - center)
+
+0.000000000 /* vert offset value type (0 - inches, 1 - % width, 2 - deg lat)
+
+0.000000000 /* size value
+
+2.000000000 /* size value type (0 - % width, 1 - % height, 2 - pixel)
+
+1.000000000 /* always on top
+
+1.000000000 /* shrink to fit
+
+END_DEFINE_PROJ
+
+NorthArrowSymbol=
+NorthArrowSymbolScale=1.000000
+NorthArrowTranslucency=384
+
+DEFINE_PROJ_NORTH_ARROW
+Projection     Fixed Screen Position
+Datum          D_ADINDAN
+Zunits         NO
+Units          RADIAN
+Xshift         0.000000
+Yshift         0.000000
+Parameters
+0.000000000 /* horz offset
+
+1.000000000 /* horz offset type (0 - left, 1 - right, 2 - center)
+
+0.000000000 /* horz offset value type (0 - inches, 1 - % width, 2 - deg lon)
+
+0.000000000 /* vert offset
+
+0.000000000 /* vert offset type (0 - top, 1 - bottom, 2 - center)
+
+0.000000000 /* vert offset value type (0 - inches, 1 - % width, 2 - deg lat)
+
+100.000000000 /* size value
+
+2.000000000 /* size value type (0 - % width, 1 - % height, 2 - pixel)
+
+1.000000000 /* always on top
+
+0.000000000 /* shrink to fit
+
+END_DEFINE_PROJ
+
+ScaleBarBgColor=16777215
+ScaleBarTranslucency=384
+ScaleBarFont=~0~534799372~0.000~0~0
+ScaleVisible=0
+
+DEFINE_PROJ_SCALE
+Projection     Fixed Screen Position
+Datum          D_ADINDAN
+Zunits         NO
+Units          RADIAN
+Xshift         0.000000
+Yshift         0.000000
+Parameters
+0.000000000 /* horz offset
+
+0.000000000 /* horz offset type (0 - left, 1 - right, 2 - center)
+
+0.000000000 /* horz offset value type (0 - inches, 1 - % width, 2 - deg lon)
+
+0.000000000 /* vert offset
+
+1.000000000 /* vert offset type (0 - top, 1 - bottom, 2 - center)
+
+0.000000000 /* vert offset value type (0 - inches, 1 - % width, 2 - deg lat)
+
+0.000000000 /* size value
+
+2.000000000 /* size value type (0 - % width, 1 - % height, 2 - pixel)
+
+1.000000000 /* always on top
+
+0.000000000 /* shrink to fit
+
+END_DEFINE_PROJ
+
+MarginLeft=0.750000
+MarginRight=0.750000
+MarginTop=0.750000
+MarginBottom=0.750000
+MarginUnits=0
+MarginEnabled=0
+MarginColor=16777215
+GridDisplayType=0
+GridDisplayShowAll=0
+GridSpacingLatLon=1.00000000000000000
+GridSpacingProjected=0.00000000000000000
+END_MAP_LAYOUT
