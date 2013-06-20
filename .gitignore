@@ -12,6 +12,8 @@ NewZealand/
 NoaaV2/
 NoaaXmlParser/
 zlib/
+PilotCharts/tiles/
+PilotCharts/txt/
 *.zip
 *.bak
 
